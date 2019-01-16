@@ -1,0 +1,69 @@
+<main>
+
+
+    <div class="container">
+        <form (submit)="originalUrl()" #form="ngForm" class="form-horizontal">
+            <div class="form-group">
+                <label>Shorten Url</label>
+
+                <input class="form-control" type="urlorig" name="urlorig" id="urlorig" autocomplete="off" [(ngModel)]="urlorig"
+                    required pattern="[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)">
+
+            </div>
+            <div class="form-group">
+
+                <button type="submit" name="submit" id="submit" [disabled]="form.invalid || btnLoading" class="btn btn-default">
+                    Get Original
+                </button>
+            </div>
+
+            <div *ngIf="originalResult">
+                <a href="{{originalResult?.url}}">{{originalResult?.url}}</a>
+            </div>
+            <div *ngIf="error">
+                No Entries Found !
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+    <hr />
+
+    <div *ngIf="links" class="container">
+        <form (submit)="shortUrl()" #form="ngForm" class="form-horizontal">
+            <div class="form-group">
+                <input class="form-control" type="url" name="url" id="url" placeholder="Enter URL..." autocomplete="off"
+                    [(ngModel)]="url" required pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
+
+            </div>
+            <div class="form-group">
+
+                <button type="submit" name="submit" id="submit" [disabled]="form.invalid || btnLoading" class="btn btn-default">
+                    Shorten
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Shorten Urls</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Shorten Url</th>
+                    <th>Original Url</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let url of userLinksData.urlData">
+                    <td><a target="_blank" href="{{url.short.shortUrl}}">{{url.short.shortUrl}}</a></td>
+                    <td>{{url.orgUrl}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</main>
