@@ -21,8 +21,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getLinks() {
-
-    console.log(this.API_BASE_URL + this.URLS_PATH);
     return this.http.get(this.API_BASE_URL + this.URLS_PATH, {
       headers: this.HEADERS
     });
@@ -36,8 +34,6 @@ export class ApiService {
 
 
   originalUrl(url) {
-
-    console.log('url is - ' + url);
     return this.http.get(this.API_BASE_URL + this.ORIGINAL_PATH + '/' + url, {
       headers: this.HEADERS
     });
