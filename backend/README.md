@@ -8,6 +8,10 @@ The Live Application can be accessed at https://url-shortener-au.herokuapp.com/
 
 Application uses free cluster of mongoDB available at https://cloud.mongodb.com for the production
 
+## Source Code 
+
+Code is available at https://github.com/nadeem-shaikh/url-shortener
+
 ## Requirement
 
 1. NodeJs
@@ -60,5 +64,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Improvements
+1. Mocha test framework can be used to cover unit test cases of node js code
+2. Create Environment Variable in Heroku to avoid username and password in code
 
 
