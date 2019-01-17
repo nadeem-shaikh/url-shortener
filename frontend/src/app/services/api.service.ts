@@ -36,6 +36,8 @@ export class ApiService {
 
 
   originalUrl(url) {
+
+    console.log('url is - ' + url);
     return this.http.get(this.API_BASE_URL + this.ORIGINAL_PATH + '/' + url, {
       headers: this.HEADERS
     });
