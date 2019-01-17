@@ -42,7 +42,7 @@ export class UrlComponent implements OnInit {
 
   originalUrl() {
 
-    const url = this.urlorig.replace(/^[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
+    const url = this.urlorig.replace(/[a-z]{4,5}\:\/{2}(.*)\//, '');
 
     this.apiService.originalUrl(url).subscribe(
       res => {
