@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "pushd backend && npm install && popd && pushd frontend && ng build && popd",
+    "install": "pushd backend && npm install",
     "postinstall": "node backend/server.js",
     "start": "pushd frontend && ng build && popd && node backend/server.js"
   },
