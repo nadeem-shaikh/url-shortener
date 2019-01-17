@@ -30,14 +30,14 @@ export class ApiService {
   }
 
   shortUrl(url) {
-    return this.http.post(this.API_HOSTNAME + this.GENERATE_SHORT_URL_PATH , url, {
+    return this.http.post(this.API_BASE_URL + this.GENERATE_SHORT_URL_PATH , url, {
       headers: this.HEADERS
     });
   }
 
 
   originalUrl(url) {
-    return this.http.get(this.API_HOSTNAME + this.ORIGINAL_PATH + '/' + url, {
+    return this.http.get(this.API_BASE_URL + this.ORIGINAL_PATH + '/' + url, {
       headers: this.HEADERS
     });
   }
