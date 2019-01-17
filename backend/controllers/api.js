@@ -1,9 +1,10 @@
 //add modules
 const express = require("express");
 const router = express.Router();
+const config = require("../config/config");
 
 
-const SHORTENER_URL = "http://localhost:3000/";
+const SHORTENER_URL = config.baseURL;
 const Url = require("../models/url");
 
 var PRE_HTTP = "http://";

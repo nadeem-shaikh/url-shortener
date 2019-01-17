@@ -1,11 +1,11 @@
 var path = require('path'),
 rootPath = path.normalize(__dirname + '/..'),
-env = 'production';
+env = process.env.NODE_ENV || 'development';
 
 var config = {
   development: {
     root: rootPath,
-    baseURL:"http://localhost:3000",
+    baseURL:"http://localhost:3000/",
     app: {
       name: 'url-shortener'
     },
@@ -18,7 +18,7 @@ var config = {
   },
   production :{
     root: rootPath,
-    baseURL:"http://localhost:3000",
+    baseURL:"https://url-shortener-au.herokuapp.com/",
     app: {
       name: 'url-shortener'
     },

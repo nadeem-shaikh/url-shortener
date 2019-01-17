@@ -4,7 +4,7 @@
     <div class="container">
         <form (submit)="originalUrl()" #form="ngForm" class="form-horizontal">
             <div class="form-group">
-                <label>Shorten Url</label>
+                <label>Enter Short Url to Get the Original URL</label>
 
                 <input class="form-control" type="urlorig" name="urlorig" id="urlorig" autocomplete="off" [(ngModel)]="urlorig"
                     required pattern="[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)">
@@ -35,6 +35,8 @@
     <div *ngIf="links" class="container">
         <form (submit)="shortUrl()" #form="ngForm" class="form-horizontal">
             <div class="form-group">
+                 <label>Enter  Url to Shorten it</label>
+
                 <input class="form-control" type="url" name="url" id="url" placeholder="Enter URL..." autocomplete="off"
                     [(ngModel)]="url" required pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
 

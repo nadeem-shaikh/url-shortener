@@ -8,7 +8,6 @@ export class ApiService {
   private API_PORT = environment.port;
   private API_PROTOCOL = environment.protocol;
   private API_BASE_URL = this.API_PROTOCOL + '://' + this.API_HOSTNAME + ':' + this.API_PORT + '/api/v1' ;
-  // 'http://localhost:3000/api/v1';
   private URLS_PATH = '/getAllUrls';
   private GENERATE_SHORT_URL_PATH = '/generateShortUrl';
   private ORIGINAL_PATH = '/getOriginalUrl';
