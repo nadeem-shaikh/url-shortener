@@ -17,7 +17,6 @@ export class ApiService {
     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
     'Access-Control-Allow-Origin': '*'
   });
-
   constructor(private http: HttpClient) { }
 
   getLinks() {
